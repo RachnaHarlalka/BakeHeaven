@@ -1,0 +1,74 @@
+<nav class="container md:px-8 mx-auto flex items-center justify-between py-4">
+    <div class="w-40">
+        <a href="/"><img src="/img/logo1.png" alt="logo" srcset=""></a>
+    </div>
+    <% if(user) { %>
+        <span class=" btn btn-primary text-xs ml-6 p-1 px-6 rounded-tl-full text-white">Hii <%= user.name%></span>
+        <% } %>
+
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <ul class="flex items-center nav-links">
+                <% if(user) { %>
+                    <% if(user.role==='admin' ) { %>
+                        <li class="ml-8 md:ml--6 text-lg md:text-lg"><a href="/blog/cakeblog">Blogs</a></li>
+
+                        <li class="ml-8 md:ml--6 text-lg md:text-lg"><a href="/admin/orders">Orders</a></li>
+                        <li class="ml-8 text-lg md:text-lg"><a href="/dashboard/allOrders" target="_blank">Dashboard</a>
+                        </li>
+                        <li class="ml-8 md:ml--6 text-lg md:text-lg">
+                            <form id="logout" action="/logout" method="POST">
+                                <a onclick="document.getElementById('logout').submit()" href="#">Logout</a>
+                            </form>
+                        </li>
+
+                        <!-- <li><a href=""><span>🖐 Admin</span> </a></li> -->
+
+                        <% } else { %>
+                            <li class="ml-8 md:ml-.5 text-lg"><a href="/#menuid">Menu</a></li>
+
+                            <li class="ml-8 md:ml--6 text-lg "><a href="/blog/cakeblog">Blogs</a></li>
+                            <li class="ml-8 md:ml--6 text-lg"><a href="/customer/orders">My Orders</a></li>
+                            <li class="ml-8 md:ml--6 text-lg">
+                                <form id="logout" action="/logout" method="POST">
+                                    <a onclick="document.getElementById('logout').submit()" href="#">Logout</a>
+                                </form>
+                            </li>
+                            <!-- <li class="ml-8 md:ml--6 text-lg md:text-lg"><a href="#">Hii <%= user.name%></a></li> -->
+                            <li class="  cartCounter ml-8 md:ml--6 text-lg">
+                                <a href="/cart" class="cartImg inline-block px-4 py-2 rounded-full flex items-center">
+                                    <span id="cartCounter" class="text-white font-bold pr-2">
+                                        <%= session.cart ? session.cart.totalQty : '' %>
+                                    </span>
+                                    <img src="/img/cart.png" alt="cart_img">
+                                </a>
+                            </li>
+                            <% } %>
+
+                                <% } else {%>
+
+                                    <li class="ml-8 md:ml-.5 text-lg md:text-lg"><a href="/#menuid">Menu</a>
+                                    </li>
+
+                                    <li class="ml-8 md:ml--6 text-lg md:text-lg"><a href="/blog/cakeblog">Blogs</a></li>
+                                    <li class="ml-8 md:ml--6 text-lg md:text-lg"><a href="/register">Register</a></li>
+                                    <li class="ml-8 md:ml--6 text-lg md:text-lg"><a href="/login">Login</a></li>
+                                    <li class="  ml-8 md:ml--6 text-lg">
+                                        <a href="/cart"
+                                            class="cartImg inline-block px-4 py-2 rounded-full flex items-center">
+                                            <span id="cartCounter" class="text-white font-bold pr-2">
+                                                <%= session.cart ? session.cart.totalQty : '' %>
+                                            </span>
+                                            <img src="/img/cart.png" alt="cart_img">
+                                        </a>
+                                    </li>
+
+
+
+                                    <% } %>
+            </ul>
+            </div>
+</nav>

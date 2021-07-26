@@ -1,0 +1,170 @@
+<%- include('partials/header.ejs') %>
+    <!-- Hero/Main header -->
+    <section class="hero ">
+        <% if(messages.success) { %>
+            <span id="success-alert" class="text-white text-sm p-4 border bg-green-600 mb-2 w-3/4">
+                <%= messages.success %>
+            </span>
+            <% } %>
+                <% if(messages.error) { %>
+                    <span id="error-alert" class="text-white text-bold text-sm p-4 border bg-red-500 mb-2 w-3/4">
+                        <%= messages.error %>
+                    </span>
+                    <% } %>
+                        <!-- <div class=" container md:pl-10 mx-auto flex items-center justify-between">
+                            <div class="w-1/3 pt-12 flex flex-col mt-40">
+                                <h6 class="text-lg ml-1">
+                                    <e>Are You Hungry?</em>
+                                </h6>
+                                <h1 class="text-3xl md:text-6xl font-extrabold	">Don't Wait</h1>
+                                <button
+                                    class="btn-primary px-3 md:px-6 py-2 md:text-lg md:py-2 rounded-full text-white font-bold mt-4 w-2/5"><a
+                                        href="/#menuid">Order Now</a></button>
+                            </div> -->
+                        <!-- <div class="w-4/3 pt-24">
+                                <img src="/img/3.png" alt="">
+                            </div> -->
+                        <!-- </div> -->
+                        <div class=" home-content">
+                            <div class="p-8">
+                                <h6 class="text-xl ml-1">
+                                    <e>Are You Hungry?</em>
+                                </h6>
+                                <h1 class="text-8xl md:text-6xl font-extrabold	">Don't Wait</h1>
+                                <button
+                                    class="btn-primary md: py-2 md:text-xl md:py-2 rounded-full text-white font-bold mt-4 w-2/5"><a
+                                        href="/#menuid">Order Now</a></button>
+                            </div>
+
+                        </div>
+    </section>
+
+    <!-- Choices -->
+
+    <div class="py-4 pl-2">
+        <div class="pt-5 text-center text-4xl">
+            <h1 class="flavHead text-primary">Experience Flavours</h1>
+        </div>
+        <div class="flavours flex flex-wrap start">
+            <% categories.forEach(function(category) { %>
+                <div class="flavours-item p-5 rounded-lg m-4">
+                    <div class="flavours-img p-3">
+                        <a href="/?search=<%= search %>&categoryId=<%= category._id %>#menuid""><img class=" ml-4"
+                            src="/img/category/<%= category.image %>" alt=""></a>
+                    </div>
+                    <span class="block text-center capitalize text-xl font-bold text-primary">
+                        <%= category.name %>
+                    </span>
+                    <span class="block text-center text-gray-600 mb-2">
+                        <%= category.description %>
+                    </span>
+                </div>
+                <% }) %>
+        </div>
+    </div>
+
+
+
+
+    <!-- Menu Section Starts -->
+    <div class="menu">
+        <section class="container md:px-10 mx-auto py-2" id="menuid">
+            <div>
+                <h1 class="text-2xl font-bold mb-8 pt-10">
+                    Menu
+                    &nbsp;
+                    <input value="<%= search %>" placeholder="Search"
+                        onchange="document.getElementById('searchLink').href = '/?search='+ this.value + '&category=<%= categoryId %>' + '#menuid'"
+                        class="shadow appearance-none border rounded w-300 py-1 px-1 text-gray-700 focus:outline-none focus:shadow-outline"
+                        type="text" name="search" />
+
+
+                    <a id="searchLink" href="/?search=<%= search %>&categoryId=<%= categoryId %>#menuid">
+                        <button
+                            class="btn-primary px-3 md:px-6 py-3 md:text-lg md:py-3 rounded-full text-white font-bold mt-4">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </button>
+                    </a>
+                </h1>
+            </div>
+            <div class="grid grid-cols-1 py-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 col-gap-12 row-gap-16 pb-16">
+                <!-- CARDS Starts -->
+                <% if (menus.length>0){ %>
+                    <% menus.forEach(function(menu) { %>
+                        <div class="w-full md:w-64 cake-card py-5">
+                            <div>
+                                <button class="mx-auto w-full focus:outline-none" id="prodimg"
+                                    data-prod="<%= JSON.stringify(menu) %>">
+                                    <a href="/product/productDetails?id=<%= menu._id %>">
+                                        <img class="h-40 mb-4 mx-auto rounded-sm" src="/img/menu/<%= menu.image %>"
+                                            alt="cake_img">
+                                    </a>
+                                </button>
+                            </div>
+                            <div class="text-center">
+                                <h2 class="mb-4 text-lg text-primary ">
+                                    <%= menu.name %>
+                                </h2>
+                                <span class="size py-1 px-4 rounded-full uppercase text-xs">
+                                    <%= menu.size %>
+                                </span>
+                                <div class="flex items-center justify-around mt-6">
+                                    <span class="font-bold text-lg">₹<%= menu.price %></span>
+                                    <button data-cake="<%= JSON.stringify(menu) %>"
+                                        class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold ">
+                                        <span>+</span>
+                                        <span class="ml-4">Add</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <% }) %>
+                            <% } else {%>
+                                <div class="no-search w-full ">
+                                    <img src="/img/no-result.png" alt="" height="400px">
+                                    <h2 class="text-2xl font-bold mt-2">Sorry, no results found!</h2>
+                                    <h3 class="mt-2">Please check the spelling <br>or try searching for something else
+                                    </h3>
+                                </div>
+                                <% } %>
+
+            </div>
+        </section>
+    </div>
+
+    <!-- About Us -->
+    <section class="aboutmain w-full py-6" id="aboutid">
+        <div class="md:flex">
+            <div class="md:w-1/2 text-lg px-3 md:text-xl font-bold mt-8">
+                <h1 class="about ml-56 text-5xl text-primary">About Us</h1>
+
+                <p class="md:px-20 pt-6 md:pt-12 pb-5 md:pb-10">We are exactly what you are looking for. Yes, we are an
+                    FSSAI certified online cake and Bakery Company that specializes in delivering absolutely
+                    lip-smacking
+                    delicacies. Currently, we are delivering cakes in Jorhat only, but sooner we will expand our scope.
+                    We
+                    are not just a bakery, we are not just bakers. In fact, we are just like you, a bunch of food lovers
+                    fascinated with sweet indulgence, who dreamt of creating an appetizing fairyland of divine
+                    delicacies
+                    that relishes the utmost desires.
+                </p>
+
+                <p class="md:px-20">So, be prepared to experience something devilishly delicious, something that will
+                    take
+                    even the hardest to please Cake Lovers on a delectable ride into the World of Sweet Indulgence where
+                    we
+                    celebrate Happiness! Watch Out Us! We Are Here to Redefine Sweetness our matchless services of
+                    delivering cakes online.
+                </p>
+            </div>
+            <div class="md:w-1/2 mt-8">
+                <img src="/img/about1.jpg" alt="img">
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <%- include('partials/footer.ejs') %>

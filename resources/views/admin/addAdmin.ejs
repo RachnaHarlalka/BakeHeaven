@@ -1,0 +1,80 @@
+<%- include("../partials/sidebar.ejs") %>
+    <section id="main-content">
+        <%- include("../partials/dashNav.ejs") %>
+            <div class="main-content-info mt-32 flex flex-col items-center">
+                <h1 class="font-bold text-2xl mb-4">Add Admin</h1>
+                <% if(messages.success) { %>
+                    <span id="success-alert" class="text-white text-sm px-4 py-1 border bg-green-600 mb-2 mr-32 w-2/5">
+                        <%= messages.success %>
+                    </span>
+                    <% } %>
+                        <% if(messages.error) { %>
+                            <span id="error-alert"
+                                class="text-white text-bold text-sm px-4 py-1 border bg-red-500 mb-2 mr-32 w-2/5">
+                                <%= messages.error %>
+                            </span>
+                            <% } %>
+                                <% if(loggedInAdmin) { %>
+
+                                    <form method="POST" action="/updateAdmin" enctype="multipart/form-data"
+                                        class="w-1/2 bg-white shadow-form rounded px-8 pt-6 pb-8 mt-4 justify-center ">
+
+
+
+                                        <input required value="<%= loggedInAdmin._id %>" type="hidden" name="id" />
+                                        <label for="name"
+                                            class="block text-gray-700 text-sm font-bold my-2">Name</label>
+                                        <input required value="<%= loggedInAdmin.name %>"
+                                            class="block shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                            type="text" name="name" />
+                                        <label for="email"
+                                            class="block text-gray-700 text-sm font-bold my-2">Email</label>
+                                        <input required value="<%= loggedInAdmin.email %>"
+                                            class="block shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                            type="text" name="email" />
+                                        <br />
+                                        <div class="flex justify-center">
+                                            <button
+                                                class=" btn-primary rounded-full text-white font-bold py-2 px-16 content-center  rounded focus:outline-none focus:shadow-outline"
+                                                type="submit">Update</button>
+                                        </div>
+                                    </form>
+                                    <% } else { %>
+
+                                        <form method="POST" action="/addAdmin" enctype="multipart/form-data"
+                                            class="w-1/2 bg-white shadow-form rounded px-8 pt-6 pb-8 justify-center ">
+
+                                            <input value="admin" type="hidden" name="role" />
+                                            <label for="name"
+                                                class="block text-gray-700 text-sm font-bold my-2">Name</label>
+                                            <input
+                                                class="block shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                                type="text" name="name" />
+                                            <label for="email"
+                                                class="block text-gray-700 text-sm font-bold  my-2">Email</label>
+                                            <input
+                                                class="block shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                                type="text" name="email" />
+                                            <label for="password"
+                                                class="block text-gray-700 text-sm font-bold my-2">Password</label>
+                                            <input
+                                                class="block shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                                type="password" name="password" />
+                                            <br />
+                                            <div class="flex justify-center">
+                                                <button
+                                                    class=" btn-primary rounded-full text-white font-bold py-2 px-16 content-center  rounded focus:outline-none focus:shadow-outline"
+                                                    type="submit">Add</button>
+                                            </div>
+                                        </form>
+                                        <% } %>
+            </div>
+    </section>
+
+
+    <script>
+        // console.log(location.href.split('/')[]);
+        var urlArray = location.href.split('/');
+        var id = urlArray[urlArray.length - 1];
+        console.log(id);
+    </script>

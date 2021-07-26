@@ -1,0 +1,27 @@
+<%- include('../partials/header.ejs') %>
+
+    <section class="status pb-16">
+        <div class="container mx-auto">
+            <div class="status-box w-full lg:w-2/3 mx-auto">
+                <div class="flex items-center justify-between mb-10">
+                    <h1 class="text-xl font-bold">Track Delivery Status</h1>
+                    <h6 class="bg-white-500 py-1 text-green-600 rounded-full px-4">
+                        <%= order._id %>
+                    </h6>
+                    <input id="hiddenInput" type="hidden" value="<%= JSON.stringify(order) %>">
+                </div>
+                <ul>
+                    <li class="status_line text-sm md:text-xl pb-16" data-status="order_placed"><span>Order
+                            Placed</span></li>
+                    <li class="status_line text-sm md:text-xl pb-16" data-status="confirmed"><span>Order
+                            Confirmation</span></li>
+                    <li class="status_line text-sm md:text-xl pb-16" data-status="prepared"><span>Preparation</span>
+                    </li>
+                    <li class="status_line text-sm md:text-xl pb-16" data-status="delivered"><span>Out for
+                            delivery</span></li>
+                    <li class="status_line text-sm md:text-xl" data-status="completed"><span>Completed</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <%- include("../partials/footer.ejs") %>

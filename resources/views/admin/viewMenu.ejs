@@ -1,0 +1,64 @@
+<%- include("../partials/sidebar.ejs") %>
+    <section id="main-content">
+        <%- include("../partials/dashNav.ejs") %>
+            <div class="main-content-info w-full mt-16">
+
+                <section class=" h-screen-86px">
+                    <div class="px-12 pb-10 pt-6">
+                        <div class="flex justify-between">
+                            <h1 class="font-bold text-2xl mb-4">All Items</h1>
+                            <a href="/dashboard/addMenu"><button
+                                    class="btn-primary rounded-full text-white font-bold py-2 px-4 content-center  rounded focus:outline-none focus:shadow-outline">Add
+                                    new item</button></a>
+
+                        </div>
+                        <table class="w-full mx-auto px-16 ptable-auto bg-white ">
+                            <thead>
+                                <tr class="pt-12">
+                                    <th class=" px-4 py-2 text-left">Name</th>
+                                    <th class=" px-4 py-2 text-left">Image</th>
+
+                                    <th class=" px-4 py-2 text-left">Id</th>
+                                    <th class=" px-4 py-2 text-left">Price</th>
+                                    <th class=" px-4 py-2 text-left">Size</th>
+                                    <th class=" px-4 py-2 text-left">Description</th>
+                                    <th class=" px-4 py-2 text-left">Action</th>
+                                </tr>
+                            </thead>
+                            <% menu.forEach(function(cake) { %>
+                                <tr class="text-gray-600 border-b border-gray-200 hover:bg-gray-100">
+                                    <td class=" px-4 py-2 text-left">
+                                        <%= cake.name %>
+                                    </td>
+                                    <td class=" px-4 py-2 text-left">
+                                        <image src="/img/menu/<%= cake.image %>" />
+                                    </td>
+                                    <td class=" px-4 py-2 text-left">
+                                        <%= cake.id %>
+                                    </td>
+                                    <td class=" px-4 py-2 text-left">₹<%= cake.price %>
+                                    </td>
+                                    <td class=" px-4 py-2 text-left">
+                                        <%= cake.size %>
+                                    </td>
+                                    <td class=" px-4 py-2 text-left">
+                                        <%= cake.description %>
+                                    </td>
+                                    <td class=" px-4 py-2 text-left flex ">
+
+                                        <a href="/dashboard/deleteMenu?id=<%= cake.id %>" class="mr-3">
+                                            <span><i class="fas fa-trash-alt hover:text-pink-700"></i></span>
+                                        </a>
+                                        <br>
+                                        <a href="/dashboard/updateMenu?id=<%= cake.id %>">
+                                            <span><i class="fas fa-edit hover:text-pink-700"></i></span>
+                                        </a>
+
+                                    </td>
+                                </tr>
+                                <% }) %>
+                        </table>
+                    </div>
+                </section>
+            </div>
+    </section>

@@ -1,0 +1,40 @@
+<%- include('../partials/header.ejs') %>
+
+  <!-- <div class="divlog"> -->
+  <section class="login flex justify-center pt-24">
+    <div class="w-full max-w-xl">
+      <div class=" flex ">
+        <% if(messages.success) { %>
+          <span id="success-alert" class="text-white text-sm px-4 py-2 border bg-green-600 mb-4 w-3/4">
+            <%= messages.success %>
+          </span>
+          <% } %>
+            <% if(messages.error) { %>
+              <span id="error-alert" class="text-white text-bold text-sm px-4 py-2 border bg-red-500 mb-4 w-3/4">
+                <%= messages.error %>
+              </span>
+              <% } %>
+      </div>
+      <form action="/forgot" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+
+        <h1 class="text-xl font-bold" for="">Forgot Password</h1>
+        <hr />
+        <div class="my-5">
+          <input name="email"
+            class="shadow appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="username" type="email" placeholder="Enter Your Email" />
+        </div>
+
+        <div class="flex items-center justify-between">
+          <button
+            class=" btn-primary rounded-full text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            type="submit" value="Reset Password">
+            Send Reset link
+          </button>
+        </div>
+      </form>
+      <p class="text-center text-gray-500 text-xs">
+        &copy;2020 Baketion. All rights reserved.
+      </p>
+    </div>
+  </section>

@@ -1,0 +1,79 @@
+<%- include('../partials/header.ejs') %>
+
+  <section class="login flex justify-center pt-16">
+    <div class="w-full max-w-lg">
+      <div class=" flex ">
+        <% if(messages.success) { %>
+          <span id="success-alert" class="text-white text-sm px-4 py-2 border bg-green-600 mb-2 w-3/4">
+            <%= messages.success %>
+          </span>
+          <% } %>
+            <% if(messages.error) { %>
+              <span id="error-alert" class="text-white text-bold text-sm px-4 py-2 border bg-red-500 mb-2 w-3/4">
+                <%= messages.error %>
+              </span>
+              <% } %>
+      </div>
+      <form action="/register" method="POST" class="bg-white shadow-xl rounded px-8 pt-6 pb-8 mb-4">
+        <h1 class="font-bold text-4xl text-center  pb-4"> Register</h1>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-lg font-bold mb-2" for="username">
+            Name
+          </label>
+          <input name="name" value="<%= messages.name %>"
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="username" type="Name" placeholder="Enter your name">
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-lg font-bold mb-2" for="username">
+            Email
+          </label>
+          <input name="email" value="<%= messages.email %>"
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="email" type="email" placeholder="Enter your email">
+        </div>
+        <div class="mb-1">
+          <label class="block text-gray-700 text-lg font-bold mb-2" for="password">
+            Password
+          </label>
+          <input name="password"
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+            id="password" type="password" placeholder="******************" autocomplete="on">
+        </div>
+        <div class="mb-1">
+          <label class="block text-gray-700 text-lg font-bold mb-2" for="confirmpassword">
+            Confirm Password
+          </label>
+          <input name="confirm"
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+            id="confirm" type="password" placeholder="******************" autocomplete="on">
+        </div>
+        <!-- <div class="mb-1">
+          <input type="checkbox" name="role" value="admin">
+          <label for="admin" class="text-gray-700 text-lg font-bold ">Sell with us</label>
+        </div> -->
+        <!-- <p class="block text-gray-500 text-xs mb-4">If you want to sell your product online please check the above checkbox</p> -->
+        <div class="flex items-center justify-between">
+          <button
+            class="btn-primary rounded-full text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            type="submit">
+            Register
+          </button>
+          <a class="inline-block align-baseline font-bold text-lg" href="/login">
+            Already have account?
+          </a>
+        </div>
+      </form>
+      <p class="text-center text-gray-500 text-xs">
+        &copy;2020 Baketion. All rights reserved.
+      </p>
+    </div>
+
+    <div class="login-svg">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#FE5F1E" fill-opacity="1"
+          d="M0,128L40,154.7C80,181,160,235,240,234.7C320,235,400,181,480,186.7C560,192,640,256,720,266.7C800,277,880,235,960,213.3C1040,192,1120,192,1200,181.3C1280,171,1360,149,1400,138.7L1440,128L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z">
+        </path>
+      </svg>
+    </div>
+  </section>

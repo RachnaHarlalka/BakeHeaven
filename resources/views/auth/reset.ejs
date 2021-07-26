@@ -1,0 +1,45 @@
+<%- include('../partials/header.ejs') %>
+
+  <!-- <div class="divlog"> -->
+  <section class="login flex justify-center pt-24">
+    <div class="w-full max-w-xl">
+      <form action="/reset/<%= token %>" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <% if(messages.success) { %>
+          <span id="success-alert" class="text-white text-sm p-4 border bg-green-600 mb-2 w-3/4">
+            <%= messages.success %>
+          </span>
+          <% } %>
+            <% if(messages.error) { %>
+              <span id="error-alert" class="text-white text-bold text-sm p-4 border bg-red-500 mb-2 w-3/4">
+                <%= messages.error %>
+              </span>
+              <% } %>
+                <h1 class="text-xl font-bold" for="">Reset Password</h1>
+                <hr />
+                <div class="my-6">
+                  <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                    New Password
+                  </label>
+                  <input name="password"
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                    id="password" autofocus="autofocus" type="password" placeholder="******************" />
+                </div>
+                <div class="my-6">
+                  <label class="block text-gray-700 text-sm font-bold mb-2" for="confirm"> Confirm Password</label>
+                  <input name="confirm"
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                    id="password" type="password" placeholder="******************" />
+                </div>
+                <div class="flex items-center justify-between">
+                  <button
+                    class=" btn-primary rounded-full text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                    type="submit">
+                    Update Password
+                  </button>
+                </div>
+      </form>
+      <p class="text-center text-gray-500 text-xs">
+        &copy;2020 Baketion. All rights reserved.
+      </p>
+    </div>
+  </section>

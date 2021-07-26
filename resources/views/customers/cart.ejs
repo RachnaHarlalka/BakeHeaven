@@ -1,0 +1,138 @@
+<%- include('../partials/header.ejs') %>
+
+    <section class="cart py-16 md:px-10 lg:px-10 xl:px-1">
+        <% if(session.cart && session.cart.totalQty !=0) { %>
+            <div class="order container mx-auto xl:w-1/2">
+                <div class="flex items-center border-b border-gray-300 pb-4">
+                    <img src="/img/cart-black.png" alt="">
+                    <h1 class="font-bold ml-4 text-2xl">Order summary</h1>
+                </div>
+                <div class="cake-list">
+                    <% for(let cake of Object.values(session.cart.items)) { %>
+                        <div class="flex items-center my-8">
+                            <button class="focus:outline-none" id="prodimg"
+                                data-prod="<%= JSON.stringify(cake.item) %>">
+                                <a href="/product/productDetails?id=<%= cake.item._id %>">
+                                    <img class="w-24" src="/img/menu/<%= cake.item.image %>" alt="cake_img">
+                                </a>
+                            </button>
+                            <div class="flex-1 ml-4">
+                                <h1 class="text-sm">
+                                    <%= cake.item.name %>
+                                </h1>
+                                <span class="text-xs bg-gray-300 rounded-full px-2 py-0.5 uppercase">
+                                    <%= cake.item.size %>
+                                </span>
+                                <div class="text-xs font-bold text-pink-900">
+                                    ₹<%= cake.item.price %>
+                                </div>
+                            </div>
+                            <span class="flex-1 ">
+                                <span class="primary mr-2  rounded-full px-2 py-1 text-white text-xs">
+                                    <a class="" href="/cart/decrementCart?id=<%= cake.item._id %>"><i
+                                            class="fas fa-minus"></i></a>
+                                </span>
+
+                                <span>
+                                    <%= cake.qty %> Pcs
+                                </span>
+                                <span class="primary ml-1  rounded-full text-white px-2 py-1 text-xs">
+                                    <a class="" href="/cart/incrementCart?id=<%= cake.item._id %>"><i
+                                            class="fas fa-plus"></i></a>
+                                </span>
+                            </span>
+                            <span class="font-bold text-lg">₹ <%= cake.item.price * cake.qty%></span>
+                            <!-- <span class="font-bold text-lg">₹ <%= cake.item.price * cake.qty %></span> -->
+                            <span class="ml-4">
+                                <!-- <button class="focus:outline-none" id="deleteProd" data-delprod="<%= JSON.stringify(cake) %>">
+                        <i class="fas fa-trash-alt"></i>
+                    </button> -->
+                                <a href="/cart/deleteCart?id=<%= cake.item._id %>">
+                                    <i class="fas fa-trash-alt hover:text-pink-700"></i>
+                                </a>
+                            </span>
+                        </div>
+                        <% } %>
+                </div>
+                <hr>
+                <div class="text-right py-4">
+                    <div>
+                        <span class="text-lg font-bold">Total Amount:</span>
+                        <span class="amount text-2xl font-bold ml-2">₹<%= session.cart.totalPrice %></span>
+                    </div>
+                    <% if(user) { %>
+                        <div>
+                            <form action="/orders" method="POST" class="mt-12" id="payment-form">
+                                <% if(messages.error) { %>
+                                    <span class="text-red-500 text-sm">
+                                        <%= messages.error %>
+                                    </span>
+                                    <!-- <label for="mobilenumber" class=" text-red-500 text-sm">
+                            <%= messages.error %>
+                        </label> -->
+                                    <% } %>
+                                        <div class="relative w-1/2 ml-auto mb-4">
+                                            <select id="paymentType" name="paymentType"
+                                                class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded leading-tight focus:outline-none focus:shadow-outline">
+                                                <option value="cod">Cash on delivery</option>
+                                                <!-- <option value="card">Pay with card</option> -->
+                                            </select>
+                                            <div
+                                                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 20 20">
+                                                    <path
+                                                        d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <input id="mobilenumber" name="phone"
+                                            class="border border-gray-400 p-2 w-1/2 mb-4" type="tel"
+                                            placeholder="Phone number">
+                                        <textarea name="address"
+                                            class="w-1/2 shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                            type="text" placeholder="Address"></textarea>
+                                        <textarea name="customize" rows="4"
+                                            class="mt-2 w-1/2 shadow appearance-none border rounded  py-2 px-3  text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                            type="text"
+                                            placeholder="If you need any customization, mention here."></textarea>
+                                        <div class="my-1 pt-2">
+                                            <p class="text-xs">Order once placed can't be cancelled. Agree if you want
+                                                to
+                                                continue.</p>
+                                            <input type="checkbox" name="check" value="agree">
+                                            <label for="admin" class="text-gray-700 text-sm font-bold ">Agree and
+                                                order</label>
+                                        </div>
+                                        <div class="mt-4">
+                                            <div id="card-element"></div>
+                                            <button
+                                                class="btn-primary order px-6 py-2 rounded-full text-white font-bold mt-6"
+                                                type="submit">Order Now</button>
+                                        </div>
+                            </form>
+
+                        </div>
+                        <% } else { %>
+                            <a href="/login"
+                                class="inline-block cursor-pointer btn-primary px-6 py-2 rounded-full text-white font-bold mt-6">Login
+                                to continue</a>
+                            <% } %>
+                </div>
+            </div>
+            <% } else { %>
+                <div class="empty-cart py-16">
+                    <div class="container mx-auto text-center">
+                        <h1 class="text-3xl font-bold mb-2">Cart Empty 😕</h1>
+                        <p class="text-gray-500 text-lg mb-12">You probably haven't ordered a cake yet. <br>
+                            To order a cake, go to the main page.</p>
+                        <img class="w-2/5 mx-auto" src="/img/empty-cart.png" alt="empty-cart">
+                        <a href="/"
+                            class="inline-block px-6 py-2 rounded-full btn-primary text-white font-bold mt-12">Go
+                            back</a>
+                    </div>
+                </div>
+                <% } %>
+    </section>
+
+    <%- include("../partials/footer.ejs") %>

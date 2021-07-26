@@ -1,0 +1,57 @@
+<%- include('../partials/header.ejs') %>
+
+  <!-- <div class="divlog"> -->
+  <section class="login flex justify-center pt-20 ">
+    <div class="w-full max-w-xl py-8">
+      <div class=" flex ">
+        <% if(messages.success) { %>
+          <span id="success-alert" class="text-white text-sm px-4 py-2 border bg-green-600 mb-4 w-3/4">
+            <%= messages.success %>
+          </span>
+          <% } %>
+            <% if(messages.error) { %>
+              <span id="error-alert" class="text-white text-bold text-sm px-4 py-2 border bg-red-500 mb-4 w-3/4">
+                <%= messages.error %>
+              </span>
+              <% } %>
+      </div>
+      <form action="/login" method="POST" class="bg-white shadow-xl rounded px-8 py-6 mb-4">
+        <h1 class="font-bold text-4xl text-center  pb-4"> Login</h1>
+
+
+
+        <div class="mb-4 ">
+          <label class="block text-gray-700 text-lg font-bold mb-2" for="username">
+            Email
+          </label>
+          <input name="email"
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="username" type="email" placeholder="Enter Your Email">
+        </div>
+        <div class="">
+          <label class="block text-gray-700 text-lg font-bold mb-2" for="password">
+            Password
+          </label>
+          <input name="password"
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+            id="password" type="password" placeholder="******************">
+        </div>
+        <div class="text-red-700 mb-6 text-sm">
+          <a href="/forgot">Forgot password?</a>
+        </div>
+        <div class="flex items-center justify-between pb-4">
+          <button
+            class="btn-primary rounded-full text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            type="submit">
+            Sign In
+          </button>
+          <a class="inline-block align-baseline font-bold text-lg" href="/register">
+            Don't have account?
+          </a>
+        </div>
+      </form>
+      <p class="text-center text-gray-500 text-xs">
+        &copy;2020 Baketion. All rights reserved.
+      </p>
+    </div>
+  </section>

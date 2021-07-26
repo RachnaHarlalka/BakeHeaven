@@ -1,0 +1,19 @@
+<header style=" display : flex; justify-content:space-between; overflow: hidden;">
+    <div class="header">
+        <h2 class="text-lg font-bold"> Welcome Admin</h2>
+    </div>
+    <div class="header header-profile">
+        <ul class="flex justify-center pr-24">
+            <!-- <li class="  mr-8">Welcome Admin</li> -->
+            <li class="ml-4 md:ml--6 text-sm md:text-lg">
+                <form id="logout" action="/logout" method="POST">
+                    <a onclick="document.getElementById('logout').submit()" href="#"
+                        class=" btn btn-primary rounded-full py-2 px-2 text-white">Logout<i
+                            class=" ml-2 fas fa-sign-out-alt"></i></a>
+                </form>
+            </li>
+
+        </ul>
+    </div>
+    <!-- <div class="clear"></div> -->
+</header>

@@ -1,0 +1,266 @@
+[
+  {
+    "_id": {
+      "$oid": "5eee6671a27a66807cf2bea1"
+    },
+    "name": "Dainty Black Forest Cake",
+    "image": "Dainty Black Forest Cake.jpg",
+    "price": "549",
+    "size": "1 pound",
+    "description": "A luscious black forest cake encased in chocolate cage with chocolate flakes on the top dusted with powdered sugar and cherries to make your taste buds go yumm yumm yummy!",
+    "categoryId": "60d7ea88fa019788bf588bd9"
+  },
+  {
+    "_id": {
+      "$oid": "5eee6671a27a66807cf2bea2"
+    },
+    "name": "Amore Mio",
+    "image": "Amore Mio.jpg",
+    "price": "599",
+    "size": "1 pound",
+    "description": "The lovely heart-shaped choco cake is topped with red fondant heart and sugar fondant swirls.",
+    "categoryId": "60d7ea88fa019788bf588bd9"
+  },
+  {
+    "_id": {
+      "$oid": "5eee6692a27a66807cf2bea3"
+    },
+    "name": "Choco Drizzle",
+    "image": "Choco Drizzle.jpg",
+    "price": "699",
+    "size": "1 pound",
+    "description": "You will sincerely believe in love at first sight as you try out this rich, creamy chocolate chip cake.",
+    "categoryId": "60d7ea88fa019788bf588bd9"
+  },
+  {
+    "_id": {
+      "$oid": "5eee66a5a27a66807cf2bea4"
+    },
+    "name": "Choco Tranquiizer",
+    "image": "Choco Tranquiizer.jpg",
+    "price": "500",
+    "size": "1 pound",
+    "description": "Swirls of choco and vanilla with creamy rich look and heavenly softness. The cake is a complete chocolaty and overpowers the hint of milk chocolate on the top. It flaunts a molten look in beautiful shapes on the top. Overall it is a twist to the chocolate",
+    "categoryId": "60d7ea88fa019788bf588bd9"
+  },
+  {
+    "_id": {
+      "$oid": "5eee66c4a27a66807cf2bea5"
+    },
+    "name": "Chocoholick Delight",
+    "image": "Chocoholick Delight.jpg",
+    "price": "399",
+    "size": "1 pound",
+    "description": "Cocoholics Delight is a delicious cake with a rich chocolate topping along with chocolate flowers.",
+    "categoryId": "60d7ea88fa019788bf588bd9"
+  },
+  {
+    "_id": {
+      "$oid": "5eee66cfa27a66807cf2bea6"
+    },
+    "name": "Elite Happiness",
+    "image": "Elite Happiness.jpg",
+    "price": "499",
+    "size": "1 pound",
+    "description": "Bombastic choco filled creaminess designed with mouth-watering Rochers on top. Chocolate cream all over the top and melting on the sides. Ferrero Rochers kept on the sides plays a role in making it even chocolaty.",
+    "categoryId": "60d7ea88fa019788bf588bd9"
+  },
+  {
+    "_id": {
+      "$oid": "5eee66eea27a66807cf2bea7"
+    },
+    "name": "Fuse Fiesta",
+    "image": "Fuse Fiesta.jpg",
+    "price": "600",
+    "size": "1 pound",
+    "description": "Dark, rich, chocolatey mocha binds snickers and melted chocolate into a spellbinding taste for your tongue!",
+    "categoryId": "60d7ea88fa019788bf588bd9"
+  },
+  {
+    "_id": {
+      "$oid": "5eee6717a27a66807cf2bea8"
+    },
+    "name": "German Gateau",
+    "image": "German Gateau.jpg",
+    "price": "500",
+    "size": "1 pound",
+    "description": "Eter the land of exotic desserts as you give this original German Black Forest cake, topped up with red cherries, a try.",
+    "categoryId": "60d7ea88fa019788bf588bd9"
+  },
+  {
+    "_id": {
+      "$oid": "5eee651f739f8c674fd73619"
+    },
+    "name": "Cherry-Indulgence",
+    "image": "Cherry-Indulgence.jpg",
+    "price": "549",
+    "size": "1 pound",
+    "description": "Cherry-Indulgence enrobes the delightful flavours of juicy cherries and whipped cream.",
+    "categoryId": "60d80198f84f2a96ffd9012b"
+  },
+  {
+    "_id": {
+      "$oid": "5eee6671a27a66807cf2be10"
+    },
+    "name": "Chocolate Truffle Fruit Cake",
+    "image": "Chocolate Truffle Fruit Cake.jpg",
+    "price": "699",
+    "size": "1 pound",
+    "description": "Dve deep in the world of scrumptiousness as you try this rich chocolate cake topped up with nutritious fruits.",
+    "categoryId": "60d80198f84f2a96ffd9012b"
+  },
+  {
+    "_id": {
+      "$oid": "5eee6692a27a66807cf2be11"
+    },
+    "name": "Ecstatically Delicious",
+    "image": "Ecstatically Delicious.jpg",
+    "price": "699",
+    "size": "1 pound",
+    "description": "Delicious cake is dressed with pineapple jelly and topped with freshly-sliced pineapples, delicious cherry, and chocolate carvings.",
+    "categoryId": "60d80198f84f2a96ffd9012b"
+  },
+  {
+    "_id": {
+      "$oid": "5eee66a5a27a66807cf2be12"
+    },
+    "name": "Fruit Frenzy",
+    "image": "Fruit Frenzy.jpg",
+    "price": "500",
+    "size": "1 pound",
+    "description": "When farm-fresh summer fruits do the almondy vanilla tango, you celebrate a rainbow of flavours in your mouth!",
+    "categoryId": "60d80198f84f2a96ffd9012b"
+  },
+  {
+    "_id": {
+      "$oid": "5eee66c4a27a66807cf2be13"
+    },
+    "name": "Kiwi-Licious",
+    "image": "Kiwi-Licious.jpg",
+    "price": "399",
+    "size": "1 pound",
+    "description": "Te scrumptious Kiwi cake is topped with goodness of finely chopped Kiwis, pineapple, and cherries.",
+    "categoryId": "60d80198f84f2a96ffd9012b"
+  },
+  {
+    "_id": {
+      "$oid": "5eee66cfa27a66807cf2be14"
+    },
+    "name": "Luscious Gooey Bliss",
+    "image": "Luscious Gooey Bliss.jpg",
+    "price": "499",
+    "size": "1 pound",
+    "description": "A true fruity bliss! Garnished with colourful and a variety of refreshing fruits like Pineapple, cherry, kiwi, Mango etc.",
+    "categoryId": "60d80198f84f2a96ffd9012b"
+  },
+  {
+    "_id": {
+      "$oid": "5eee66eea27a66807cf2be15"
+    },
+    "name": "Luxurious Fantasy",
+    "image": "Luxurious Fantasy.jpg",
+    "price": "600",
+    "size": "1 pound",
+    "description": "Looking too real to eat, but this dreamy, creamy Red Velvet layer cake sandwiched with fresh cream and topped up with some seasonal fruits is what we all have wished for, at some point of time.",
+    "categoryId": "60d80198f84f2a96ffd9012b"
+  },
+  {
+    "_id": {
+      "$oid": "5eee6717a27a66807cf2be16"
+    },
+    "name": "Sunshine Poise",
+    "image": "Sunshine Poise.jpg",
+    "price": "500",
+    "size": "1 pound",
+    "description": "Caving for pineapples? Dive in the pool of deliciousness and get the real taste of pineapple with this scrumptious cake.",
+    "categoryId": "60d80198f84f2a96ffd9012b"
+  },
+  {
+    "_id": {
+      "$oid": "5eee6717a27a66807cf2be17"
+    },
+    "name": "Choco vanilla cake",
+    "image": "choco-vanilla-cake.jpg",
+    "price": "500",
+    "size": "1 pound",
+    "description": "Your dessert of the day exquisite choco vanilla cake. Yes, you can have both at the same time. You won't know until you have a bite of it. The picture says it all! This choco vanilla cake can be a snack while whipping over a hot coffee. An ideal choice for any celebration.",
+    "categoryId": "60d876272888515720747b05"
+  },
+  {
+    "_id": {
+      "$oid": "5eee6717a27a66807cf2be18"
+    },
+    "name": "Heartfull-Vanilla Cake",
+    "image": "heartfull-vanilla-cake.jpg",
+    "price": "500",
+    "size": "1 pound",
+    "description": "This lusciously rich, moist, and decadent three layer cake is a FANTASY COME TRUE. Each slice will serve/bring you the taste of chocolate and creamy vanilla deliciously nestled between the layers. The heart-shaped cake with an extra rich romantic frosting of chocolate and vanilla, and hand-crafted fondant red roses is the perfect dessert for your beloved on Birthdays, Anniversary, Valentine's Day and more",
+    "categoryId": "60d876272888515720747b05"
+  },
+  {
+    "_id": {
+      "$oid": "5eee6717a27a66807cf2be19"
+    },
+    "name": "Sweetness Vanilla cake",
+    "image": "hearty-sweetness-cake.jpg",
+    "price": "500",
+    "size": "1 pound",
+    "description": "Your Valentine is going to fall in love with its very first bite when you surprise them with a delicious beauty pure and white. Prettier than any cake you ever ate, here's a vanilla decadence that they will finish and forget all the hate. Send online a vanilla cream cake and surprise them straight away!",
+    "categoryId": "60d876272888515720747b05"
+  },
+  {
+    "_id": {
+      "$oid": "5eee6717a27a66807cf2be20"
+    },
+    "name": "Vanilla Cake with Cherry",
+    "image": "vanilla-cake-with-cherry.jpg",
+    "price": "500",
+    "size": "1 pound",
+    "description": "Vanilla cakes are back in trend! So, celebrate life and various special milestones of your loved one's life over this delightful vanilla cake. Topped up with some colourful sprinkles, caramel syrup and chocolate squares, this cake will beautifully redefine the meaning of love with its unmatched taste and appeal.",
+    "categoryId": "60d876272888515720747b05"
+  },
+  {
+    "_id": {
+      "$oid": "5eee6717a27a66807cf2be21"
+    },
+    "name": "Strawberry Round Cake",
+    "image": "strawberry-round-cake.jpg",
+    "price": "500",
+    "size": "1 pound",
+    "description": "This toothsome strawberry rose is a divine three-layered dessert filled with rich strawberry cream and crushed strawberries. With roses carved on its contours and strawberry cream icing, why give the same old bouquet to your loved ones when you can be one step ahead with this ambrosial strawberry!",
+    "categoryId": "60d83be7557563ac5ce54e13"
+  },
+  {
+    "_id": {
+      "$oid": "5eee6717a27a66807cf2be22"
+    },
+    "name": "Strawberry Cream Cake",
+    "image": "strawberry cream cake.jpg",
+    "price": "500",
+    "size": "1 pound",
+    "description": "Dive Deep Into The World Of Real Strawberries As You Delight Yourself And All Your Loved Ones With This Scrumptious Baked Strawberry Cake. Topped Up With Tiny Fondant White Flowers And Some Chocolate Drizzle, This Strawberry Cake Is No Less Than A Dream For Every Strawberry Cake Lover Out There.",
+    "categoryId": "60d83be7557563ac5ce54e13"
+  },
+  {
+    "_id": {
+      "$oid": "5eee6717a27a66807cf2be23"
+    },
+    "name": "Round Strawberry Cake",
+    "image": "round strawberry cake.jpg",
+    "price": "500",
+    "size": "1 pound",
+    "description": "Give Your Friends An Impromptu Surprise With This Deluxe Soft And Moist Strawberry Glazed Heavy Buttercream Frosted Cake. Topped With White Chocolate Toppers And Soft Pink Dollops Of Buttercream Icing, This Is A Fluffy Not-So-Heavy Cake To Relish Your Taste Palettes.",
+    "categoryId": "60d83be7557563ac5ce54e13"
+  },
+  {
+    "_id": {
+      "$oid": "5eee6717a27a66807cf2be24"
+    },
+    "name": "Juicy Strawberry Cake",
+    "image": "juicy strawberry cake.jpg",
+    "price": "500",
+    "size": "1 pound",
+    "description": "Make way for the Heavens Exclusive Delicacy infused with luscious strawberry flavor and a dash of infatuation. This super love-filled cake with strawberry glaze and fondant rose is all that you need to make indelible expressions of love.Perfect for occasions like anniversary, Valentine's or your sweetheart's birthday, this cake is sure to please hearts and make memories cherishable.",
+    "categoryId": "60d83be7557563ac5ce54e13"
+  }
+]

@@ -1,0 +1,33 @@
+<%- include('../partials/header.ejs') %>
+
+    <section class="blogsOption md:px-10 mx-auto content-centre container mx-auto content-center">
+        <h1 class="text-5xl font-bold text-center py-4">BLOGS</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 col-gap-16 row-gap-12 pb-16">
+            <div class="">
+                <img src="/img/blogcover1.jpg" alt="img">
+                <a href="/blog/firstblog">
+                    <h1 class="text-4xl font-bold leading-10 pt-6 hover:text-orange-700">Oh So Yummy! Spongy Eggless
+                        Vanilla Cake Recipe</h1>
+                </a>
+                <p class="text-lg pt-6">Let us start this cake blog by stating a universal dessert fact: there’s no one
+                    cake as tempting as spongy vanilla cake......</p>
+                <button class="btn-primary  px-2 py-1 rounded-lg text-white mt-4">
+                    <a href="/blog/firstblog">Read more</a>
+                </button>
+            </div>
+            <div class="">
+                <img src="/img/blogcover2.jpg" alt="img">
+                <a href="/blog/secondblog">
+                    <h1 class="text-4xl font-bold leading-10 pt-6 hover:text-orange-700">Fantastic Birthday Cake Ideas
+                        for Grandparents</h1>
+                </a>
+                <p class="text-lg pt-6">Our grandparents are the source of wisdom, values and endless happiness for us.
+                    They are the ones who have the ability to .......</p>
+                <button class="btn-primary px-2 py-1 rounded-lg text-white mt-4">
+                    <a href="/blog/secondblog">Read more</a>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <%- include("../partials/footer.ejs") %>

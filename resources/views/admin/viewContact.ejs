@@ -1,0 +1,39 @@
+<%- include("../partials/sidebar.ejs") %>
+    <section id="main-content">
+        <%- include("../partials/dashNav.ejs") %>
+            <div class="main-content-info mt-12">
+                <div class="px-12 py-10 w-full">
+                    <h1 class="font-bold text-2xl mb-4">All Messages</h1>
+                    <table class="w-full mx-auto px-16 ptable-auto bg-white">
+                        <thead>
+                            <tr class="pt-12">
+                                <th class=" px-4 py-2 text-left">Name</th>
+                                <th class=" px-4 py-2 text-left">Email Address</th>
+                                <th class=" px-4 py-2 text-left">Messages</th>
+                                <th class=" px-4 py-2 text-left">Actions</th>
+
+                            </tr>
+                        </thead>
+                        <% contacts.forEach(function(contact) { %>
+                            <tr class="text-gray-600 border-b border-gray-200 hover:bg-gray-100">
+                                <td class=" px-4 py-2 text-left">
+                                    <%= contact.name %>
+                                </td>
+                                <td class=" px-4 py-2 text-left">
+                                    <%= contact.email %>
+                                </td>
+                                <td class=" px-4 py-2 text-left">
+                                    <%= contact.message %>
+                                </td>
+                                <td class=" px-8 py-2 ">
+                                    <a href="/deleteContact?id=<%= contact._id %>">
+                                        <i class="fas fa-trash-alt hover:text-pink-700"></i>
+
+                                    </a>
+                                </td>
+                            </tr>
+                            <% }) %>
+                    </table>
+                </div>
+            </div>
+    </section>
