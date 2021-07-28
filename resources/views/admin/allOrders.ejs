@@ -12,7 +12,7 @@
                                 <th class="px-4 py-2 text-left">Phone no.</th>
                                 <th class="px-4 py-2 text-left">Status</th>
                                 <th class="px-4 py-2 text-left">Placed at</th>
-                                <th class="px-4 py-2 text-left">Payment Type</th>
+                                <th class="px-4 py-2 text-left">Payment Status</th>
                                 <th class="px-4 py-2 text-left">Actions</th>
 
                             </tr>
@@ -35,7 +35,7 @@
                                     <%= moment(order.createdAt ).format('MM-DD-YYYY, h:mm:ss a')%>
                                 </td>
                                 <td class=" px-4 py-2 text-left">
-                                    <%= order.paymentType %>
+                                    <%= order.paymentStatus ? 'paid' : 'Not Paid' %>
                                 </td>
                                 <td class=" px-8 py-2 ">
                                     <a href="/deleteOrders?id=<%= order._id %>">

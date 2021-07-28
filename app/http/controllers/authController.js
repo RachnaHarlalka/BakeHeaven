@@ -39,6 +39,7 @@ function authController() {
                         req.flash('error', info.message)
                         return next(err)
                     }
+                    req.flash('success', 'LogIn successfull')
                     return res.redirect(_getRedirectUrl(req))
                 })
             })(req, res, next)
@@ -86,7 +87,9 @@ function authController() {
                 role: role
             })
             user.save().then((user) => {
-                return res.redirect('/')
+                req.flash('success', 'SignUp successfull')
+
+                return res.redirect('/login')
             }).catch(err => {
                 req.flash('error', 'Something went wrong')
                 return res.redirect('/')

@@ -11,6 +11,7 @@ function orderController() {
                     return res.render('admin/orders')
                 }
             })
+
         }
     }
 }
