@@ -21,7 +21,7 @@ const Menu = require('./app/models/menu')
 const Order = require('./app/models/order')
 const admin = require('./app/http/middleware/admin')
 
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 8000
 
 // connecting to Database
 const url = 'mongodb://localhost/cake';
