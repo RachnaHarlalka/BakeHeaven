@@ -63,7 +63,7 @@ function homeController() {
             <h3>Contact Details</h3>
             <ul>
                 <li>Name : ${req.body.name}</li>
-                <li>Email : ${req.body.email.match(regex)}</li>
+                <li>Email : ${req.body.email}</li>
             </ul>
             <h3>Message</h3>
             <p>${req.body.message}</p>
@@ -78,7 +78,7 @@ function homeController() {
             let mailOptions = {
                 to: 'rachnaharlalka12345@gmail.com',
                 from: 'rachnaag1999@gmail.com',
-                subject: 'Baketion Contact request',
+                subject: 'BakeHeaven Contact request',
                 text: 'Hello world',
                 html: output
             };

@@ -27,6 +27,7 @@ function orderController() {
                 customize: customize,
                 address: address,
             })
+            // console.log(order);
             order.save().then(result => {
                 Order.populate(result, { path: 'customerId' }, (err, placedOrder) => {
                     // req.flash('success', 'Order placed successfully')
@@ -55,14 +56,15 @@ function orderController() {
                                 console.log(err)
                             })
                         }).catch((err) => {
+
                             delete req.session.cart
                             return res.json({ message: 'Order Placed but payment failed, You can pay at delivery time' });
 
                         });
                     } else {
-                        delete req.session.cart
-                        placedOrder.paymentType = paymentType
 
+
+                        delete req.session.cart
                         return res.json({ message: 'Order placed successfully' });
 
                     }
